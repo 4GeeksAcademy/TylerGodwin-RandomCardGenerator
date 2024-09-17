@@ -14,29 +14,39 @@ body {
   height: 525px;
   border-radius: 5%;
   position: relative;
-  top: 0;
+  top: 25px;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
   border: solid grey 0.5px;
   box-shadow: 5px 5px 5px 5px;
-  &:before {
-  position: absolute;
-  top: 5px;
-  left: 20px;
-  font-size: 100pt;
 }
 
-&:after {
+#randomButton {
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to bottom right,
+    orange,
+    yellow,
+    orange,
+    yellow,
+    orange,
+    yellow
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 200px 0 0 150px;
   position: absolute;
-  bottom: 5px;
-  right: 20px;
-  font-size: 100pt;
-  transform: rotate(180deg);
+  height: 200px;
+  width: 200px;
+  font-family: "Jacques Francois Shadow";
+  font-size: 20pt;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.5);
 }
 
-&.spade:before, &.spade:after {content: "\2660";}
-&.heart:before, &.heart:after {content: "\2665"; color: red;}
-&.club:before, &.club:after {content: "\2663";}
-&.diamond:before, &.diamond:after {content: "\2666"; color: red;}
+#randomButton:active {
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.5);
+  transform: translateY(1px);
+}

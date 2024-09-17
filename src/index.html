@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Card Generator</title>
     <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="card">
-      <div class="suit"></div>
+    <button onclick="randomCardGenerator()" type="button" id="randomButton">
+      Generate a random card!
+    </button>
+    <div class="card" style="justify-content: space-around;">
+      <div
+        class="suit top"
+        style="display: flex; align-items: flex-start; height: 100%;"
+      ></div>
       <div class="rank"></div>
-      <div class="suit2"></div>
+      <div
+        class="suit bottom"
+        style="display: flex; align-items: flex-start; height: 100%; transform: rotate(180deg)"
+      ></div>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>

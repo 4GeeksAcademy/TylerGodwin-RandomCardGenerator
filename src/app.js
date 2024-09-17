@@ -1,7 +1,9 @@
-window.onload = () => {
-  document.querySelector(".card").classList.add(generateRandomSuit());
-  document.querySelector(".card").innerHTML = generateRandomRank();
-};
+document
+  .getElementById("randomButton")
+  .addEventListener("click", function randomCardGenerator() {
+    document.querySelector(".rank").innerHTML = generateRandomRank();
+    generateRandomSuit();
+  });
 
 let generateRandomRank = () => {
   let rank = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
@@ -10,7 +12,17 @@ let generateRandomRank = () => {
 };
 
 let generateRandomSuit = () => {
-  let suit = ["spade", "heart", "club", "diamond"];
+  let suit = ["♦", "♣", "♥", "♠"];
   let randomSuit = Math.floor(Math.random() * suit.length);
-  return suit[randomSuit];
+  if (suit[randomSuit] === "♥" || suit[randomSuit] === "♦") {
+    document.querySelector(".top").style.color = "red";
+    document.querySelector(".rank").style.color = "red";
+    document.querySelector(".bottom").style.color = "red";
+  } else {
+    document.querySelector(".top").style.color = "black";
+    document.querySelector(".rank").style.color = "black";
+    document.querySelector(".bottom").style.color = "black";
+  }
+  document.querySelector(".top").innerHTML = suit[randomSuit];
+  document.querySelector(".bottom").innerHTML = suit[randomSuit];
 };
